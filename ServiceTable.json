@@ -1,0 +1,18 @@
+[
+  {
+     "id" : "1",
+     "type" : "Citizen",
+     "name" : "Mr. Jovid Smith",
+     "service" : "Missed Bin",
+     "time_stamp": "9:43"
+  },
+
+  {
+     "id" : "2",
+     "name" : "Mrs. Paula Watson",
+     "type" : "Citizen",
+     "service" : "Missed Bin",
+     "time_stamp": "9:43"
+  }
+
+]
