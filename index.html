@@ -1,33 +1,87 @@
 <!DOCTYPE HTML>
-<<html>
+<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"
                 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
                 crossorigin="anonymous"></script>
-        <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
         <script src="script.js"> </script>
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css" >
         <title>FirmStepDeveloper Test  </title>
-    </head> <!-- End of Head Part -->
+    </head> <!-- End of Head Part-->
 
     <body>
-        <div class="jumbotron text-center">
-            <h1>Queue App</h1>
+
+       <div class="jumbotron text-center">
+       <h1>Queue App</h1>
         </div>
-        <div class="container">
+        <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-4">
-           
+            <div class="col-sm-6">
+                    <h3 class= "text-left"> New Customer </h3>
+                    <h4  class= "text-left"><strong> Services </strong> <h4>
+                    <form>
+                        <div id="servicelist">
+                        </div>
+                        <br>
+                        <br>
+
+                        <select>
+                        <option class="mybutton" value="Citizen" selected > Citizen </option>
+                        <option  class="mybutton" value="Organisition"> Organisition </option>
+                        <option   class="mybutton" value="Annonymous"> Annonymous </option>
+                        </select>
+                        <br>
+                        <br>
+                        <div id="inputData">
+                            <label>Title</label>
+                            <input type="text" id="txt0" name="txt0" ><br>
+                             <label>FirstName</label>
+                             <input type="text" id="txt1" name="txt1" ><br>
+                             <label>FirstName</label>
+                             <input type="text" id="txt1" name="txt1" ><br>
+
+                        </div>
+                       <input name="submitButton" type="submit">
+
+                    </form>
+
+
             </div>
+            <div class="col-sm-6">
+                    <h3 class= "text-left"> Queue </h3>
+                    <h4  class= "text-left"><strong> List of the customers being queued. </strong> <h4>
+                    <div >
+                    <table class="table">
+                    <thead>
+                    <tr>
+                          <th> # </th>
+                          <th> Type </th>
+                          <th> Name </th>
+                          <th> Service </th>
+                          <th> Queued at </th>
+                    <tr>
+                    </thead>
+                    <tbody id="queueList">
+
+                    </tbody>
+
+                    </table>
+
+                    </div>
+
         </div>
         </div>
 
-        
+
 
 
     </body>
-    
+
 </html>
