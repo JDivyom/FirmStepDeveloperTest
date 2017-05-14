@@ -9,8 +9,8 @@
 
   {
      "id" : "2",
-     "name" : "Mrs. Paula Watson",
      "typeOfClient" : "Citizen",
+     "name" : "Mrs. Paula Watson",
      "service" : "Missed Bin",
      "time_stamp": "9:43"
   }
