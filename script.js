@@ -55,7 +55,7 @@ $(document).ready(function(){
  			namestring=$oname.val();
  		if (tabClicked==='Annonymous')
  			namestring='';
- 	     var newQueue ={
+ 	     var queue ={
  			id: parseInt(v_id)+1,
  			typeOfClient :tabClicked,
  			service : serviceSelected,
@@ -66,19 +66,37 @@ $(document).ready(function(){
  		//alert(parseInt(v_id)+1+tabClicked+serviceSelected+namestring+v_timp_stamp);
     	$.ajax({
 			type:'POST',
-			url:'https://jdivyom.github.io/FirmStepDeveloperTest/queue.json/',
+			url:'https://jdivyom.github.io/FirmStepDeveloperTest/queue.json',
 			data: queue,
 			//Type: PlainObject,
-			dataType:json,
+			contentType: 'application/json; charset=utf-8',
 			success:function(newQueue){
 				$queueList.append('<tr>'+'<td>' + newQueue.id+ ',</td>' + '<td>' + newQueue.typeOfClient+ ',</td>' +'<td>' + newQueue.name+ ',</td>'+'<td>' + newQueue.service+ ',</td>'+'<td>' + newQueue.time_stamp+ ',</td>' +'</tr>');
 				 // alert('hello');
 				  // $queueList.append( newQueue.id,newQueue.typeOfClient,newQueue.name,newQueue.service,newQueue.time_stamp);
 			},
 
-			error:function(){
-				alert('error saving new queueRecord')
-			}
+			error:function(XMLHttpRequest, exception) {
+        /*var msg = '';
+        if (jqXHR.status === 0) {
+            msg = 'Not connect.\n Verify Network.';
+        } else if (jqXHR.status == 404) {
+            msg = 'Requested page not found. [404]';
+        } else if (jqXHR.status == 500) {
+            msg = 'Internal Server Error [500].';
+        } else if (exception === 'parsererror') {
+            msg = 'Requested JSON parse failed.';
+        } else if (exception === 'timeout') {
+            msg = 'Time out error.';
+        } else if (exception === 'abort') {
+            msg = 'Ajax request aborted.';
+        } else {
+            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+        }*/
+        alert(XMLHttpRequest.readyState);
+           // alert(error);
+            //alert(errorThrown);
+       }
 
 
  		});
@@ -91,7 +109,7 @@ $.ajax({
 	url:'https://jdivyom.github.io/FirmStepDeveloperTest/queue.json',
 	success:function(queueData){
           $.each(queueData,function(i,queueRecord){
-             $queueList.append('<tr>'+'<td>' + queueRecord.id+ '</td>' + '<td>' + queueRecord.typeOfType+ '</td>' +'<td>' + queueRecord.name+ '</td>'+'<td>' + queueRecord.service+ '</td>'+'<td>' + queueRecord.time_stamp+ '</td>' +'</tr>');
+             $queueList.append('<tr>'+'<td>' + queueRecord.id+ '</td>' + '<td>' + queueRecord.typeOfClient+ '</td>' +'<td>' + queueRecord.name+ '</td>'+'<td>' + queueRecord.service+ '</td>'+'<td>' + queueRecord.time_stamp+ '</td>' +'</tr>');
                 v_id = queueRecord.id;
           		return v_id
           });
