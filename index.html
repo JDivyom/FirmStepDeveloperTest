@@ -31,24 +31,37 @@
                         </div>
                         <br>
                         <br>
-
-                        <select>
-                        <option class="mybutton" value="Citizen" selected > Citizen </option>
-                        <option  class="mybutton" value="Organisition"> Organisition </option>
-                        <option   class="mybutton" value="Annonymous"> Annonymous </option>
-                        </select>
                         <br>
                         <br>
-                        <div id="inputData">
-                            <label>Title</label>
-                            <input type="text" id="txt0" name="txt0" ><br>
-                             <label>FirstName</label>
-                             <input type="text" id="txt1" name="txt1" ><br>
-                             <label>FirstName</label>
-                             <input type="text" id="txt1" name="txt1" ><br>
+                        <div class="tabPannels">
+                            <ul class="tabHeadings">
+                                <li data-tabid="Citizen" >Citizen </li>
+                                <li data-tabid="Organisition" >  Organisition </li>
+                                <li data-tabid="Annonymous" >  Annonymous  </li>
+                            </ul>
+                            <div id="Citizen" class="tab active">
+                                <label> Title     : </label>
+                                <input type="text" id="title" name="title"><br>
+                                <label> FirstName : </label>
+                                <input type="text" id="fname" name="fname"><br>
+                                <label> LastName  : </label>
+                                <input type="text" id="lname" name="lname"><br>
+                                <br>
+                                <br>
+                            </div>
+                            <div id="Organisition" class="tab">
+                                <label> Organisation Name : </label>
+                                <input type="text" id="oname" name="oname">
+                                <br>
+                                <br>
+                            </div>
+                            <div id="Annonymous" class="tab">
+                                <br>
+                                <br>
+                            </div>
 
                         </div>
-                       <input name="submitButton" type="submit">
+                       <button name="submitButton" >Add to Queue
 
                     </form>
 
@@ -78,10 +91,6 @@
 
         </div>
         </div>
-
-
-
-
     </body>
 
 </html>
