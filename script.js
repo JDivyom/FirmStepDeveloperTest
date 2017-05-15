@@ -41,8 +41,7 @@ $(document).ready(function(){
 				}) // To find which type is been clicked
 
  $submit.on('click',function(){
-     //alert(tabClicked);
-     //alert(typeof(tabClicked));
+;
      	var today = new Date();
    		var cHour = today.getHours();
     	var cMin = today.getMinutes();
@@ -62,41 +61,25 @@ $(document).ready(function(){
  			name : namestring,
  			time_stamp :v_timp_stamp
  		};
- 		//alert(queue.id+queue.typeOfClient+queue.service+queue.name+queue.time_stamp);
- 		//alert(parseInt(v_id)+1+tabClicked+serviceSelected+namestring+v_timp_stamp);
+
+
     	$.ajax({
 			type:'POST',
 			url:'https://jdivyom.github.io/FirmStepDeveloperTest/queue.json',
-			data: queue,
-			//Type: PlainObject,
+			data: JSON.stringify(queue),
 			contentType: 'application/json; charset=utf-8',
+			dataType:'json',
 			success:function(newQueue){
 				$queueList.append('<tr>'+'<td>' + newQueue.id+ ',</td>' + '<td>' + newQueue.typeOfClient+ ',</td>' +'<td>' + newQueue.name+ ',</td>'+'<td>' + newQueue.service+ ',</td>'+'<td>' + newQueue.time_stamp+ ',</td>' +'</tr>');
-				 // alert('hello');
-				  // $queueList.append( newQueue.id,newQueue.typeOfClient,newQueue.name,newQueue.service,newQueue.time_stamp);
-			},
+		
+				},
 
 			error:function(XMLHttpRequest, exception) {
-        /*var msg = '';
-        if (jqXHR.status === 0) {
-            msg = 'Not connect.\n Verify Network.';
-        } else if (jqXHR.status == 404) {
-            msg = 'Requested page not found. [404]';
-        } else if (jqXHR.status == 500) {
-            msg = 'Internal Server Error [500].';
-        } else if (exception === 'parsererror') {
-            msg = 'Requested JSON parse failed.';
-        } else if (exception === 'timeout') {
-            msg = 'Time out error.';
-        } else if (exception === 'abort') {
-            msg = 'Ajax request aborted.';
-        } else {
-            msg = 'Uncaught Error.\n' + jqXHR.responseText;
-        }*/
-        alert(XMLHttpRequest.readyState);
-           // alert(error);
-            //alert(errorThrown);
-       }
+
+			        alert(XMLHttpRequest.readyState);
+			           // alert(error);
+			            //alert(errorThrown);
+			       }
 
 
  		});
