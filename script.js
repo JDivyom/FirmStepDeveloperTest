@@ -60,7 +60,7 @@ $(document).ready(function(){
  			name : namestring,
  			time_stamp :v_timp_stamp
  		};
- 		//alert(queue.id+queue.typeOfClient+queue.service+queue.name+queue.time_stamp);
+ 		alert(queue.id+queue.typeOfClient+queue.service+queue.name+queue.time_stamp);
  		//alert(parseInt(v_id)+1+tabClicked+serviceSelected+namestring+v_timp_stamp);
     	$.ajax({
 			type:'POST',
