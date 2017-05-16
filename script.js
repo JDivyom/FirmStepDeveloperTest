@@ -67,7 +67,11 @@ $(document).ready(function(){
 			//url:'https://jdivyom.github.io/FirmStepDeveloperTest/queue.json',
      		       url:'https://jdivyom.github.io/FirmStepDeveloperTest/submit.php',
 			//url:'submit.php',
-			data: queue,
+			data: {id: parseInt(v_id)+1,
+ 				typeOfClient :tabClicked,
+ 				service : serviceSelected,
+ 				name : namestring,
+ 				time_stamp :v_timp_stamp},
 			Type: 'json',
 			contentType: 'application/json; charset=utf-8',
 			success:function(newQueue){
