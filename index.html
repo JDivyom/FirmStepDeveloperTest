@@ -9,7 +9,7 @@
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <script src="script.js"> </script>
+        <script src="script2.js"> </script>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css" >
@@ -26,7 +26,7 @@
             <div class="col-sm-6">
                     <h3 class= "text-left"> New Customer </h3>
                     <h4  class= "text-left"><strong> Services </strong> <h4>
-                    <form>
+                    <form action="submit.php" name="queue_form" method="post">
                         <div id="servicelist">
                         </div>
                         <br>
@@ -61,7 +61,7 @@
                             </div>
 
                         </div>
-                       <input id="submitButton" type="submit" value="Add to Queue">
+                       <input name="submit" id="submitButton" type="submit" value="Add to Queue">
 
                     </form>
 

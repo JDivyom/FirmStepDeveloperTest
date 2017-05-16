@@ -41,7 +41,6 @@ $(document).ready(function(){
 				}) // To find which type is been clicked
 
  $submit.on('click',function(){
-;
      	var today = new Date();
    		var cHour = today.getHours();
     	var cMin = today.getMinutes();
@@ -53,7 +52,7 @@ $(document).ready(function(){
  		if (tabClicked==='Organisition')
  			namestring=$oname.val();
  		if (tabClicked==='Annonymous')
- 			namestring='';
+ 			namestring='Annonymous';
  	     var queue ={
  			id: parseInt(v_id)+1,
  			typeOfClient :tabClicked,
@@ -61,25 +60,26 @@ $(document).ready(function(){
  			name : namestring,
  			time_stamp :v_timp_stamp
  		};
-
-
+ 		//alert(queue.id+queue.typeOfClient+queue.service+queue.name+queue.time_stamp);
+ 		//alert(parseInt(v_id)+1+tabClicked+serviceSelected+namestring+v_timp_stamp);
     	$.ajax({
 			type:'POST',
-			url:'https://jdivyom.github.io/FirmStepDeveloperTest/queue.json',
-			data: JSON.stringify(queue),
+			//url:'https://jdivyom.github.io/FirmStepDeveloperTest/queue.json',
+     		//url:'https://jdivyom.github.io/FirmStepDeveloperTest/submit.php'
+			url:'submit.php',
+			data: queue,
+			Type: 'json',
 			contentType: 'application/json; charset=utf-8',
-			dataType:'json',
 			success:function(newQueue){
 				$queueList.append('<tr>'+'<td>' + newQueue.id+ ',</td>' + '<td>' + newQueue.typeOfClient+ ',</td>' +'<td>' + newQueue.name+ ',</td>'+'<td>' + newQueue.service+ ',</td>'+'<td>' + newQueue.time_stamp+ ',</td>' +'</tr>');
-		
-				},
+				 // alert('hello');
+				  // $queueList.append( newQueue.id,newQueue.typeOfClient,newQueue.name,newQueue.service,newQueue.time_stamp);
+			},
 
 			error:function(XMLHttpRequest, exception) {
+       			  alert(XMLHttpRequest.readyState);
 
-			        alert(XMLHttpRequest.readyState);
-			           // alert(error);
-			            //alert(errorThrown);
-			       }
+       }
 
 
  		});
