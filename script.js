@@ -65,8 +65,8 @@ $(document).ready(function(){
     	$.ajax({
 			type:'POST',
 			//url:'https://jdivyom.github.io/FirmStepDeveloperTest/queue.json',
-     		//url:'https://jdivyom.github.io/FirmStepDeveloperTest/submit.php'
-			url:'submit.php',
+     		       url:'https://jdivyom.github.io/FirmStepDeveloperTest/submit.php',
+			//url:'submit.php',
 			data: queue,
 			Type: 'json',
 			contentType: 'application/json; charset=utf-8',
