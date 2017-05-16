@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['submit']))
+/*if (isset($_POST['submit']))
 {
   $dbconnection = mysqli_connect('localhost','root', '','firmstep');
   if ($dbconnection)
@@ -21,6 +21,7 @@ if (isset($_POST['submit']))
   }
 
 
-}
+}*/
+echo "hello you reached to me";
 
 ?>
