@@ -76,9 +76,10 @@ $(document).ready(function(){
 				  // $queueList.append( newQueue.id,newQueue.typeOfClient,newQueue.name,newQueue.service,newQueue.time_stamp);
 			},
 
-			error:function(XMLHttpRequest, exception, newQueue) {
-       			  alert(XMLHttpRequest.readyState);
-       			  alert( newQueue.id,newQueue.typeOfClient,newQueue.name,newQueue.service,newQueue.time_stamp);}
+			error:function(XMLHttpRequest, exception) {
+       			      alert(XMLHttpRequest.readyState);}
+			      function(newQueue){
+       			      alert( newQueue.id+newQueue.typeOfClient+newQueue.name+newQueue.service+newQueue.time_stamp);}
 
        
 
