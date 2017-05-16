@@ -1,3 +1,4 @@
+<html>
 <?php
 
 /*if (isset($_POST['submit']))
@@ -25,3 +26,4 @@
 echo "hello you reached to me";
 
 ?>
+</html>
